@@ -43,9 +43,18 @@ namespace December.Controllers
         }
 
         // GET: Employes/Create
-        public IActionResult Create()
+        public IActionResult AddOrEdit( int id = 0)
         {
-            return View();
+            if (id == 0)
+            
+                return View(new Employe());
+                else 
+                
+                 return View(_context.Employes.Find(id));
+                
+
+                
+            
         }
 
         // POST: Employes/Create
@@ -53,11 +62,14 @@ namespace December.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeId,Namn,Avd,Position,Stad")] Employe employe)
+        public async Task<IActionResult> AddOrEdit([Bind("EmployeId,Namn,Avd,Position,Stad")] Employe employe)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(employe);
+                if (employe.EmployeId == 0)
+                    _context.Add(employe);
+                else
+                    _context.Update(employe);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

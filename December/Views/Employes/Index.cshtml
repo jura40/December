@@ -6,9 +6,7 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -24,7 +22,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Stad)
             </th>
-            <th></th>
+            <th>
+                <p>
+                    <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class ="far fa-plus-square"></i>Create</a>
+                </p>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -43,8 +45,8 @@
                 @Html.DisplayFor(modelItem => item.Stad)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EmployeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EmployeId">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.EmployeId"><i class="fa fa-marker fa-lg"></i>Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EmployeId" class= "text-danger ml-1"><i class=" fa fa-trash-alt fa-lg"></i>Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.EmployeId">Delete</a>
             </td>
         </tr>
