@@ -25,7 +25,8 @@ namespace December.Models
         [Column(TypeName = "nvarchar(20)")]
         [DisplayName("Stad")]
         public string Stad { get; set; }
-        
+        public DateTime Datum { get; set; }
+
 
     }
 }

@@ -12,7 +12,7 @@
     <div class="col-md-6">
         <form asp-action="AddOrEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type ="hidden" asp-for="EmployeId"/>
+            <input type="hidden" asp-for="EmployeId" />
             <div class="form-group">
                 <label asp-for="Namn" class="control-label"></label>
                 <input asp-for="Namn" class="form-control" />
@@ -34,6 +34,11 @@
                 <label asp-for="Stad" class="control-label"></label>
                 <input asp-for="Stad" class="form-control" />
                 <span asp-validation-for="Stad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Datum" class="control-label"></label>
+                <input asp-for="Datum" class="form-control" />
+                <span asp-validation-for="Datum" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

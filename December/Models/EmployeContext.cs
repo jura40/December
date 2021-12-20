@@ -14,6 +14,7 @@ namespace December.Models
         }
         public DbSet<Employe> Employes { get; set; }
         public DbSet<Company> Companys { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
 
        
        
