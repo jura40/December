@@ -62,7 +62,7 @@ namespace December.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("EmployeId,Namn,Avd,Position,Stad")] Employe employe)
+        public async Task<IActionResult> AddOrEdit([Bind("EmployeId,Namn,Avd,Position,Stad,ImageUrl")] Employe employe)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace December.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmployeId,Namn,Avd,Position,Stad")] Employe employe)
+        public async Task<IActionResult> Edit(int id, [Bind("EmployeId,Namn,Avd,Position,Stad,ImageUrl")] Employe employe)
         {
             if (id != employe.EmployeId)
             {

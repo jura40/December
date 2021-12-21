@@ -26,6 +26,7 @@ namespace December.Models
         [DisplayName("Stad")]
         public string Stad { get; set; }
         public DateTime Datum { get; set; }
+        public string ImageUrl { get; set; }
 
 
     }
